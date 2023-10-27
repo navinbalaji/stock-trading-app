@@ -1,7 +1,7 @@
 import express from "express";
 const stockMatchRouter = express.Router();
 
-class Stock {
+export class Stock {
   constructor(name, price, quantity,type) {
     this.name = name;
     this.price = price;
@@ -10,7 +10,7 @@ class Stock {
   }
 }
 
-class MatchingEngine {
+export class MatchingEngine {
   constructor() {
     this.result = null;
     this.orders = {
@@ -58,7 +58,7 @@ class MatchingEngine {
   }
 }
 
-const matchingEngine = new MatchingEngine();
+export const matchingEngine = new MatchingEngine();
 
 stockMatchRouter.post("/match", (req, res) => {
   try {

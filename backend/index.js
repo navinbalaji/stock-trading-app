@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import stockMatchRouter from "./StockMatching.js";
 
-const stockApp = express();
+export const stockApp = express();
 
 stockApp.use(express.json());
 stockApp.use(
