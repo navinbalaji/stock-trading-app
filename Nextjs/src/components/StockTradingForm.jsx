@@ -4,10 +4,10 @@ import React, { useState } from "react";
 
 export default function StockTradingForm({ onSubmit }) {
   const [stock, setStock] = useState({
-    stockName: "TATA",
+    stockName: "-1",
     price: 0,
     quantity: 0,
-    orderType: "buy",
+    type: "-1",
   });
 
   const handleSubmit = (e) => {
@@ -16,13 +16,13 @@ export default function StockTradingForm({ onSubmit }) {
       stockName: stock.stockName,
       price: parseFloat(stock.price),
       quantity: parseInt(stock.quantity),
-      type: stock.orderType,
+      type: stock.type,
     });
     setStock({
       stockName: "",
       price: 0,
       quantity: 0,
-      orderType: "buy",
+      type: "buy",
     });
   };
 
@@ -35,6 +35,7 @@ export default function StockTradingForm({ onSubmit }) {
       <div className={style.formElement}>
         <label>Stock Name:</label>
         <select value={stock.stockName} name="stockName" onChange={(e) => onChangeEvent(e)}>
+          <option value="-1">Select Stock</option>
           <option value="TATA">TATA</option>
           <option value="RELIANCE">RELIANCE</option>
         </select>
@@ -52,7 +53,8 @@ export default function StockTradingForm({ onSubmit }) {
 
       <div className={style.formElement}>
         <label>Order Type:</label>
-        <select value={stock.orderType} name="orderType" onChange={(e) => onChangeEvent(e)}>
+        <select value={stock.type} name="type" onChange={(e) => onChangeEvent(e)}>
+          <option value="-1">Select Type</option>
           <option value="buy">Buy</option>
           <option value="sell">Sell</option>
         </select>
