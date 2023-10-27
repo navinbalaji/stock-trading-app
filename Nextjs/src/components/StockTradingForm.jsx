@@ -19,10 +19,10 @@ export default function StockTradingForm({ onSubmit }) {
       type: stock.type,
     });
     setStock({
-      stockName: "",
+      stockName: "-1",
       price: 0,
       quantity: 0,
-      type: "buy",
+      type: "-1",
     });
   };
 

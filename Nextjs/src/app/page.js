@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function Home() {
   const [orders, setOrders] = useState([]);
+  const [matchingOrder, setMatchingOrder] = useState(null);
 
   const onSubmit = async (order) => {
     setOrders([...orders, order]);
@@ -17,7 +18,10 @@ export default function Home() {
         "Content-Type": "application/json",
       },
     });
-    console.log(returnData.data);
+    console.log(returnData.data?.result);
+    if (returnData.data?.result) {
+      setMatchingOrder(returnData.data?.result);
+    }
   };
 
   return (
@@ -30,7 +34,7 @@ export default function Home() {
         <h1 className={styles.header}>Stock Trading App</h1>
         <StockTradingForm onSubmit={onSubmit} />
         <h2 className={styles.header}>Orders</h2>
-        <h2 className={styles.stockMatched}> Stock Matched</h2>
+        {matchingOrder && <h2 className={styles.stockMatched}> {matchingOrder}</h2>}
         <div className={styles.stockList}>
           <ul>
             {orders.map((order, index) => (
