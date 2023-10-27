@@ -1,0 +1,44 @@
+.stockForm {
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.formElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.formElement label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.formElement input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 0.4rem;
+}
+
+.formElement select{
+    width: 210px;
+    height: 43px;
+    font-size: 20px;
+    margin-top: 0.4rem;
+}
+
+.stockForm input[type="submit"]{
+    height: 45px;
+    width: 150px;
+    margin: auto;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

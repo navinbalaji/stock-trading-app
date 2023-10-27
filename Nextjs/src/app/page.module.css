@@ -1,0 +1,28 @@
+.header {
+    text-align: center;
+}
+
+.stockList {
+    display: grid;
+    place-items: center;
+}
+
+.stockList ul {
+    list-style: none;
+}
+
+.stockList ul>li {
+    width: 450px;
+    height: 30px;
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stockMatched{
+    text-align: center;
+    color: rgb(133, 197, 37);
+}
